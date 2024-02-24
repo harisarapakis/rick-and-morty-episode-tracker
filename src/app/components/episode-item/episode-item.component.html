@@ -1,0 +1,22 @@
+<div class="border border-gray-200 rounded-lg overflow-hidden shadow-md">
+  <div class="p-6 flex-grow flex flex-col justify-between">
+    <div>
+      <h2 class="card-title">{{ episode.name }}</h2>
+      <p class="card-subtitle">Air Date: {{ episode.air_date }}</p>
+      <p class="card-subtitle">Episode Code: {{ episode.episode }}</p>
+      <div *ngIf="characterNames$ | async as characterNames" class="characters">
+        <h3 class="card-subtitle">Characters:</h3>
+        <p class="character-names">{{ characterNames }}</p>
+      </div>
+    </div>
+  <div class="flex flex-wrap justify-center px-6 py-2 bg-gray-100 border-t border-gray-200">
+    <button (click)="markAsWatched()" class="btn btn-watch mb-2 mt-1 sm:mb-0 sm:mr-2">Watched</button>
+    <button (click)="markAsUnwatched()" class="btn btn-unwatch mb-2 mt-1 sm:mb-0 sm:mr-2">Unwatched</button>
+  </div>
+  <div class="flex flex-wrap justify-center px-6 py-2 bg-gray-100 border-t border-gray-200">
+    <button (click)="markAsWatching()" class="btn btn-watching mb-2 mt-1 sm:mb-0 sm:mr-2">Watching</button>
+    <div *ngIf="episode.watched">
+      <button (click)="markAsFavorite()" class="btn btn-favorite mb-2 mt-1 sm:mb-0 sm:mr-2">Favorite</button>
+    </div>
+  </div>
+</div>

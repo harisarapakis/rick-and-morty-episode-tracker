@@ -1,0 +1,19 @@
+<div *ngIf="loading" class="text-center">Loading...</div>
+<div *ngIf="error" class="text-center text-red-500">{{ error }}</div>
+
+<div class="flex justify-center space-x-4 mt-4 mb-4 flex-wrap">
+  <button (click)="filterEpisodes('all')" class="btn mt-1">All</button>
+  <button (click)="filterEpisodes('watched')" class="btn mt-1">Watched</button>
+  <button (click)="filterEpisodes('unwatched')" class="btn mt-1">Unwatched</button>
+  <button (click)="filterEpisodes('watching')" class="btn mt-1">Watching</button>
+  <button (click)="filterEpisodes('favorites')" class="btn mt-1">Favorites</button>
+</div>
+
+<div *ngIf="filteredEpisodes && filteredEpisodes.length" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <app-episode-item *ngFor="let episode of filteredEpisodes" [episode]="episode" class="p-4 border border-gray-300 rounded-md shadow-md"></app-episode-item>
+</div>
+<div *ngIf="!filteredEpisodes || filteredEpisodes.length === 0" class="text-center">
+  <p class="text-gray-600">No episodes found.</p>
+</div>
+
+<button *ngIf="nextPageUrl" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 w-full sm:w-auto" (click)="loadMoreEpisodes()">Load More</button>

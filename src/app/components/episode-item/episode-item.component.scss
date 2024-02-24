@@ -1,0 +1,61 @@
+/* Base button style */
+.btn {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 120px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Watched button style */
+.btn-watch {
+  background-color: #48bb78;
+  color: #fff;
+}
+
+/* Unwatched button style */
+.btn-unwatch {
+  background-color: #f56565;
+  color: #fff;
+}
+
+/* Watching button style */
+.btn-watching {
+  background-color: #4299e1;
+  color: #fff;
+}
+
+/* Favorite button style */
+.btn-favorite {
+  background-color: #f6e05e;
+  color: #fff;
+}
+
+/* Title style */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle style */
+.card-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Character names style */
+.character-names {
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+/* Card container style */
+.card-container {
+  padding: 1.5rem;
+}
